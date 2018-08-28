@@ -1,0 +1,480 @@
+/* @TODO: 2015-09-01 this contains mostly helper classes and TODO statements to sort out later*/
+
+small, .small {
+  font-size: 85%;
+}
+
+.container {
+  margin: 0 auto;
+
+  &:before {
+    display: table;
+    content: " ";
+  }
+
+  &:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}
+
+/*doc
+---
+title: Basic layouting
+name: layout-helpers
+category: Helpers
+---
+
+If you have to move stuff around, just apply some of your favorite layout helpers:
+
+```html_example
+<div class="container">
+  <span class="lfloat">I'm floating left</span>
+  <span class="rfloat">More oldschool - let's float to the right</span>
+</div>
+```
+> example-container
+
+*/
+
+/* ====== Floats ====== */
+.lfloat {
+    float:left;
+}
+.rfloat {
+    float:right;
+}
+
+/* ====== Form styles ===== */
+
+input:invalid {
+  background: #fff;
+}
+
+/*doc
+---
+title: Adding borders to things
+name: fontsize-helpers
+category: Helpers
+---
+
+Use this with caution, but we have helpers to add borders to things:
+
+```html_example
+<p class="ui-border">I have a border around me</p>
+<p class="ui-borderLeft">I have a border to the left</p>
+<p class="ui-borderTop">I have a border on top if me</p>
+<p class="ui-borderRight">I have a border to my right</p>
+<p class="ui-borderBottom">Sitting on borders is so much fun</p>
+```
+> example-container
+
+*/
+
+.ui-border {
+  border: 1px solid $colorMedium;
+}
+
+.ui-border-light-secondary {
+  border: 1px solid $colorLightSecondary;
+}
+
+.ui-borderTop {
+  border-top: 1px solid $colorMedium;
+}
+
+.ui-borderBottom {
+  border-bottom: 1px solid $colorMedium;
+}
+
+.ui-borderLeft {
+  border-left: 1px solid $colorMedium;
+}
+
+.ui-borderRight {
+  border-right: 1px solid $colorMedium;
+}
+
+.ui-grid {
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.ui-gridFull {
+  display: table;
+  width: 100%;
+}
+
+.ui-gridBorder {
+  border: 1px solid #d3d3d3;
+}
+
+.ui-grid {
+  .vTop {
+    vertical-align: top;
+  }
+  .vMid {
+    vertical-align: middle;
+  }
+  .vBot {
+    vertical-align: bottom;
+  }
+}
+
+/* List Items */
+
+.ui-listItem {
+  display: block;
+}
+
+.ui-listHorizontal .ui-listItem {
+  display: inline-block;
+  /* IE7 hack to mimic inline-block */
+  *display: inline;
+  *zoom: 1;
+}
+
+.ie7 .ui-listHorizontal .ui-listItem {
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+
+.ui-listItemBorder .ui-listItem {
+  border: 1px solid;
+}
+
+.ui-listBulleted {
+  list-style-type: disc;
+  margin-left: 13px;
+}
+
+.ui-listUnstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* inline-block and block element */
+
+.ui-inlineBlock {
+  display: inline-block;
+  /* IE7 hack to mimic inline-block */
+  *display: inline;
+  *zoom: 1;
+}
+
+.ui-block {
+  display: block;
+}
+
+.ui-flex {
+  display: flex;
+}
+
+/* QuickView Modal Window */
+
+.ui-dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 501;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#67676750,endColorstr=#67676750);
+  /* fallback for IE 8 and lower since rgba is not supprted */
+  background-color: rgba(103, 103, 103, 0.5);
+  .container {
+    position: relative;
+    padding: 36px 15px 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #676767;
+    box-shadow: 0 0 15px #676767;
+    zoom: 1;
+  }
+}
+
+/* fixes the IE7 / IE8 unclickable overlay bug */
+
+.ui-dialogProcessing .container {
+  width: 50%;
+  min-height: 100px;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+/* ====== Typography ====== */
+
+/*doc
+---
+title: Font sizes
+name: fontsize-helpers
+category: Helpers
+---
+
+These are css helper classes ready to use for layouting directly in html.
+
+```html_example
+<p class="fss">Small</p>
+<p class="fsn">Normal (this is the body font-size too!)</p>
+<p class="fsl">Medium</p>
+<p class="fsxl">Large</p>
+<p class="fsxxl">Extra Large</p>
+```
+> example-container
+
+*/
+.fss    { font-size: $fontsizeS }
+.fsm    { font-size: $fontsizeM }
+.fsl    { font-size: $fontsizeL }
+.fsxl   { font-size: $fontsizeXL }
+.fsxxl  { font-size: $fontsizeXXL }
+.fsxxxl { font-size: $fontsizeXXXL }
+
+/*doc
+---
+title: Stylisation
+name: style-helpers
+category: Helpers
+---
+
+Helpers to style the appearance of text
+
+```html_example
+<p class="strong">Strong</p>
+<p class="normal">Normal</p>
+<p class="italic">Italic</p>
+<p class="txtUpper">All Caps</p>
+<p class="txtLower">LOWERCASE</p>
+<p class="txtCenter">Centered</p>
+<p class="txtRight">Right aligned</p>
+<p class="success">Yay!</p>
+<p class="error">Nooo :/</p>
+```
+> example-container
+
+*/
+.strong {
+  font-weight: 700;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+/* Font Style */
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* hides text replaced by images */
+
+.hiddenText {
+  text-indent: -10000px;
+  overflow: hidden;
+}
+
+/* text-transform */
+
+.txtUpper {
+  text-transform: uppercase;
+}
+
+.txtNormal {
+  text-transform: none;
+}
+
+.txtLower {
+  text-transform: lowercase;
+}
+
+/* text-align */
+
+.txtRight {
+  text-align: right;
+}
+
+.txtLeft {
+  text-align: left;
+}
+
+.txtCenter {
+  text-align: center;
+}
+
+/* text-color */
+.text-dark-secondary {
+  color: $colorDarkSecondary;
+}
+
+.text-highlight-positive {
+  color: $colorHighlightPositive;
+}
+
+/* vertical-align */
+.vAlignMiddle {
+  vertical-align: middle;
+}
+
+/* word-wrap */
+
+.wordwrap {
+  word-wrap: break-word;
+}
+
+/* line height helper */
+
+.lhn {
+  line-height: 100%;
+}
+
+.lhxs {
+  line-height: 10px;
+}
+
+.lhs {
+  line-height: 11px;
+}
+
+.lhm {
+  line-height: 12px;
+}
+
+.lhml {
+  line-height: 14px;
+}
+
+.lhl {
+  line-height: 16px;
+}
+
+.lhxl {
+  line-height: 18px;
+}
+
+.lhmxl {
+  line-height: 20px;
+}
+
+.lhxxl {
+  line-height: 22px;
+}
+
+.success {
+  color: $colorHighlightPositive;
+}
+
+.error {
+  color: $colorHighlightNegative;
+}
+
+/* border styles */
+
+.box-bdr, .ui-listLight .ui-listItem, .ui-tabViewNav > li, .cartTable .cartItems tr, .hdSimple, .categoryMenu, .fct-scroll {
+  border-color: $colorMedium;
+}
+
+.ui-listMedium .ui-listItem {
+  border-color: #ccc;
+}
+
+.ui-listLight .ui-listItem.active-list-item {
+  border-color: #888;
+}
+
+.box-bdrDark, .prd-colorList li.active, .ui-listDark .ui-listItem {
+  border-color: #333;
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.affix {
+  position: fixed;
+}
+
+.l-menu.affix {
+  background: #fff;
+  border-top: medium none;
+  margin-top: 24px;
+  opacity: 0.85;
+  z-index: 90;
+}
+
+/* ====== Visual Layout Styles ====== */
+
+/* Page Background */
+
+.ui-page-bg {
+  background-color: #f6f6f6;
+}
+
+/* placeholder attribute */
+
+::-webkit-input-placeholder, :-moz-placeholder {
+  color: #b4b4b4;
+}
+
+/**
+ * Box Modules
+ */
+
+/* ====== Product Preview Module (ppv) ====== */
+
+.box {
+    position: relative;
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.box-hd,
+.box-bd,
+.box-ft {
+    padding: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.box-hd,
+.box-bd,
+.box-ft {
+
+}
+/* box border */
+.box-bdr {
+    border: 1px solid $colorMedium;
+}
+.box-bdr2 {
+    border: 1px solid #999;
+}
+/* box background color */
+.box-bgcolor {
+    background: #fff;
+}
+.box-rounded {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+/* ui background color */
+.ui-bg-light-primary {
+  background-color: $colorLightPrimary;
+}
+
+/* ui text color */
+.ui-text-dark-tertiary {
+  color: $colorDarkTertiary;
+}

@@ -1,0 +1,28 @@
+header {
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    color: #fff;
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: 80px;
+    padding: 10px;
+}
+
+.page-container {
+    padding: 100px 50px 0 50px;
+}
+
+.b-playground {
+    -webkit-transition: border-color .25s ease-in-out;
+    transition: border-color .25s ease-in-out;
+    border: 1px solid #e9ebed;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.b-playground__preview--wrapper {
+    padding: 32px;
+    overflow: auto;
+}
