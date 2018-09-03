@@ -7,5 +7,5 @@
 
 ### Usage
 ```
-yanr start
+yarn start
 ``` 

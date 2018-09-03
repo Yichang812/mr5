@@ -6,7 +6,7 @@
   "author": "Li Yichang <ariellee121@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --mode development --watch --progress",
+    "start": "webpack-dev-server --open 'Google Chrome' --progress --watch-content-base",
     "build": "webpack --mode production"
   },
   "dependencies": {
@@ -20,15 +20,15 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.0",
     "css-loader": "^1.0.0",
+    "fast-sass-loader": "^1.4.6",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "resolve-url-loader": "^2.3.0",
-    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "url-loader": "^1.1.1",
     "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.6"
   }
 }

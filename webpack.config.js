@@ -24,7 +24,11 @@ module.exports = {
           },
           {
             test: /\.scss$/,
-            loaders: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
+            use: [
+              'style-loader',
+              'css-loader',
+              'fast-sass-loader',
+            ]
           },
           {
             test: /\.(png|jpg|gif)$/i,
@@ -41,5 +45,10 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     })
-]
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000
+  }
 };

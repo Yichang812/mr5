@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {UnControlled as CodeMirror} from 'react-codemirror2'
-require('./global-scss/global.scss');
-require('./global-scss/mobile/global.scss');
+require('./global/global.scss');
+require('./global/mobile/global.scss');
 require('./index.css');
 require('codemirror/lib/codemirror.css');
 require('codemirror/theme/material.css');
